@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
 
-app.get("/message/:id/:user", (request, response)=>{
-    const {id, user} = request.params
+app.get("/users", (request, response)=>{
+    const {id, user} = request.query
     response.send(`
         Id da mensagem: ${id}
         usuário: ${user}
