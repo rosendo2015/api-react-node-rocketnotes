@@ -16,6 +16,7 @@ if(error instanceof AppError){
         message: error.message
     });
 }
+console.error(error)
 return response.status(500).json({
     status:"error",
     message:"INTERNAL SERVER ERROR."
