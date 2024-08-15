@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./src/server.js",
-    "dev":"nodemon ./src/server.js"
+    "dev": "nodemon ./src/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "api": "file:",
     "express": "^4.19.2"
   },
   "devDependencies": {
