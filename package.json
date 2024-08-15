@@ -12,7 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "api": "file:",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "express-async-errors": "^3.1.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"
