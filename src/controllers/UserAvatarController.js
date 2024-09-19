@@ -9,7 +9,8 @@ async update(request, response){
 
     const diskStorage = new DiskStorage();
 
-    const user = await knex("users").where({id: user_id}).first();
+    const user = await knex("users")
+    .where({id: user_id}).first();
 
     if(!user){
         throw new AppError("Somente usuário autenticado tem permissão para essa ação.", 401);
