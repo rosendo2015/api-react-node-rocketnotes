@@ -1,4 +1,5 @@
-const knex = require("../knex")
+const knex = require("knex");
+
 
 class NotesController{
     async create(request, response){

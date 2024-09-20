@@ -1,6 +1,7 @@
-const knex = require("knex");
+
 const AppError = require("../utils/AppError");
-const DiskStorage = require("../providers/DiskStorage")
+const DiskStorage = require("../providers/DiskStorage");
+const knex = require("knex");
 
 class UserAvatarController{
 async update(request, response){
@@ -9,8 +10,7 @@ async update(request, response){
 
     const diskStorage = new DiskStorage();
 
-    const user = await knex("users")
-    .where({id: user_id}).first();
+    const user = await knex('users').where({id: user_id}).first();
 
     if(!user){
         throw new AppError("Somente usuário autenticado tem permissão para essa ação.", 401);
@@ -23,7 +23,7 @@ async update(request, response){
     const filename = await diskStorage.saveFile(avatarFilename);
     user.avatar = filename;
 
-    await knex("users").update(user).where({id: user_id});
+    await knex('users').update(user).where({id: user_id});
 
     return response.json(user);
 }
